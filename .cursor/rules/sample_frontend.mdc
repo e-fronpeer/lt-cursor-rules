@@ -1,0 +1,62 @@
+---
+description: Frontend architecture and coding style guide
+commentJa: |
+  ## 目的
+  - AI に誤解なく伝えるため、本指示は英語で記述
+  - フロントエンド設計・命名・状態管理・UI構造に一貫性を持たせ、チーム開発の認知コストを下げる。
+  - Atomic Design を柔軟に運用し、Tailwind や設計方針との整合性を保つ。
+  ## 適用範囲
+  - フロントエンド全体に常時適用（alwaysApply: true）
+  ## 備考
+  - Cursor の出力がこの構成・スタイルに従うよう補正するのが目的。
+alwaysApply: true
+---
+
+Standards for frontend components and API validation
+
+This rule provides standards for frontend components:
+When working in components directory:
+Always use Tailwind for styling
+Use Framer Motion for animations
+Follow component naming conventions
+This rule enforces validation for API endpoints:
+In API directory:
+Use zod for all validation
+Define return types with zod schemas
+Export types generated from schemas
+
+===
+
+- コンポーネント構成は **3層構造（pages → templates → components）** とする
+  - `pages`: ページ単位、hooksを含む状態管理を担当
+  - `templates`: 見た目の構成、デザイン単位のコンポジションを担当
+  - `components`: ボタン等のUI部品。小さく再利用可能なものを集約
+- components 内の再帰的な階層構造は **2階層まで** に制限し、**複雑な入れ子を避ける**
+- **命名ルールに一貫性を持たせる**（e.g. `UserCard.tsx`, `SubmitButton.tsx`）
+
+## コーディングスタイル
+
+- `let` は基本的に使用禁止。**再代入が必要な場面では明示的に理由を書くこと**
+- `any` の使用は原則禁止。**必要な場合は理由を明記**
+- `interface` よりも `type` を原則使用し、型定義は統一する
+- `useEffect` の使用は控える。**副作用管理は必要最低限にし、custom hookを推奨**
+
+## 状態管理
+
+- APIコールは `SWR` などの**状態管理ライブラリ**と併用することを推奨
+- 不要な `useState`, `useEffect` による肥大化を避ける
+
+## フォーム
+
+- 原則として **フォームライブラリ（React Hook Formなど）を導入する**
+  - バリデーション・初期値・UI連携の一貫性のため
+
+## デザイン方針
+
+- **Atomic Designを参考**にするが、過剰な階層化は避ける
+  - 必要に応じて `atoms` を持たない `organisms` も許容
+- Vibe コーディングや Tailwind CSS の導入状況に応じて柔軟に調整
+
+## その他
+
+- 例外的な実装を行う場合は、コメントで理由を明示すること

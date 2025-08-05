@@ -1,0 +1,25 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+
+~/Library/CloudStorage/GoogleDrive-shuhei9701@gmail.com/共有ドライブ/勉強会/202507勉強会  ‹main› $ tree -L 2
+.
+├── Cursor Rulesを用いた チームのアウトプットの水準をあげる仕組み作り.gslides
+├── memo.md
+├── playground-cursor
+│   └── memo.md
+├── rule-settings.png
+├── rules-applied.png
+├── スクリーンショット 2025-07-12 19.04.23.png
+├── スクリーンショット 2025-07-12 19.04.28.png
+├── スクリーンショット 2025-07-12 19.23.37.png
+├── スクリーンショット 2025-08-03 9.03.26.png
+├── スクリーンショット 2025-08-03 9.04.02.png
+├── スクリーンショット 2025-08-03 9.04.16.png
+├── スクリーンショット 2025-08-03 9.05.45.png
+├── 見積もり.md
+└── 勉強会_cursor.md
+
+2 directories, 14 files

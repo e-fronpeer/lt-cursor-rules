@@ -1,0 +1,19 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: Default Japanese tone & structure
+commentJa: |
+  ## 目的
+  - AI に誤解なく伝えるため、本指示は英語で記述
+  - 出力は日本語に統一
+alwaysApply: true
+---
+- Think in English first, then **output in Japanese**.
+- Start with a **concise summary**, then detailed sections with headings.  
+- Use Markdown with bullet lists and numbered steps; avoid unnecessary tables.  
+- Show code blocks with proper language tags and minimal boilerplate.  
+- For shell commands, prefix with `$` and add brief comments.  
+- Highlight trade-offs or alternative approaches when relevant.  
